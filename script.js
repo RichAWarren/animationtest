@@ -39,7 +39,7 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 // listen to events...
 mc.on("panup pandown panend tap press", function(ev) {
     if (ev.type === 'panup') {
-        degree += 7
+        degree += 5
         reset(degree)
         lastDirection = 'panup';
         if (ev.velocityY < maxV) {
@@ -47,7 +47,7 @@ mc.on("panup pandown panend tap press", function(ev) {
         };
     }
     if (ev.type === 'pandown') {
-        degree -= 7
+        degree -= 5
         reset(degree)
         lastDirection = 'pandown';
         if (ev.velocityY > maxV) {
@@ -74,10 +74,10 @@ function momentum(direction, velocity) {
     }
     var newVel = velocity - 0.3;
     if (direction === 'panup') {
-        degree += (3 * newVel/5)
+        degree += (3 * newVel)
     }
     if (direction === 'pandown') {
-        degree -= (3 * newVel/5)
+        degree -= (3 * newVel)
     }
     reset(degree);
     setTimeout(function() {momentum(direction, newVel)}, 30);
