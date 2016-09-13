@@ -103,7 +103,7 @@ function snapMove(direction) {
     }
     reset(degree)
     if (degree % 45 > 3) {
-        setTimeout(function() {snapMove(degree)}, 30);
+        setTimeout(function() {snapMove(direction)}, 30);
     } else {
         return degree;
     }
