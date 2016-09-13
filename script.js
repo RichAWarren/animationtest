@@ -38,11 +38,11 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 // listen to events...
 mc.on("panleft panright panup pandown tap press", function(ev) {
     if (ev.type === 'panup') {
-        degree += 2
+        degree += 5
         reset(degree, function(){})
     }
     if (ev.type === 'pandown') {
-        degree -= 2
+        degree -= 5
         reset(degree, function(){})
     }
 });
