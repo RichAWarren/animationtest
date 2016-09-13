@@ -23,7 +23,7 @@ function reset(deg, cb) {
 
 var degree = 0;
 
-reset(degree, () => {})
+reset(degree, function(){})
 
 var body = document.querySelector('body');
 
@@ -39,10 +39,10 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 mc.on("panleft panright panup pandown tap press", function(ev) {
     if (ev.type === 'panup') {
         degree += 2
-        reset(degree, ()=>{})
+        reset(degree, function(){})
     }
     if (ev.type === 'pandown') {
         degree -= 2
-        reset(degree, ()=>{})
+        reset(degree, function(){})
     }
 });
