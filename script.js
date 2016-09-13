@@ -70,6 +70,7 @@ mc.on("panup pandown panend tap press", function(ev) {
 
 function momentum(direction, velocity) {
     if (velocity <= 0) {
+        snap()
         return velocity;
     }
     var newVel = velocity - 0.3;
@@ -81,4 +82,29 @@ function momentum(direction, velocity) {
     }
     reset(degree);
     setTimeout(function() {momentum(direction, newVel)}, 30);
+}
+
+function snap() {
+    var diff = degree % 45
+    if (diff < 22.5) {
+        snapMove('down')
+    } else {
+        snapMove('up')
+    }
+
+}
+
+function snapMove(direction) {
+    if (direction === 'down') {
+        degree -= 3
+    }
+    if (direction === 'up') {
+        degree += 3
+    }
+    reset(degree)
+    if (degree % 45 > 3) {
+        setTimeout(function() {snapMove(degree)}, 30);
+    } else {
+        return degree;
+    }
 }
