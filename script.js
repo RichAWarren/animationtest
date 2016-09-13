@@ -5,7 +5,7 @@ function add() {
     degree = degree + 1;
 }
 
-function reset(deg, cb) {
+function reset(deg) {
     $(".slot-machine").each(function(){
         var $panes = $("li", this);
         $panes.each(function(index){
@@ -18,50 +18,67 @@ function reset(deg, cb) {
             }
         });
     });
-    cb();
 };
 
 var degree = 0;
 var lastDirection = '';
+var maxV = 0;
 
-reset(degree, function(){})
+reset(degree)
 
 var body = document.querySelector('body');
 
 // create a simple instance
 // by default, it only adds horizontal recognizers
-// var mc = new Hammer(body);
-var hammertime = new Hammer(body, options);
+var mc = new Hammer(body);
 
 // let the pan gesture support all directions.
 // this will block the vertical scrolling on a touch-device while on the element
-hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
 // listen to events...
-var options = {
-    preventDefault: true
-};
-hammertime.on("swipeup swipedown", function(ev){
-    console.log('swipe');
-    if (ev.type === 'swipeup') {
-        console.log(ev.velocityY);
-        degree = degree + ev.velocityY * 100;
-        reset(degree, function(){})
+mc.on("panup pandown panend tap press", function(ev) {
+    if (ev.type === 'panup') {
+        degree += 3
+        reset(degree)
         lastDirection = 'panup';
+        if (ev.velocityY < maxV) {
+            maxV = ev.velocityY;
+        };
     }
-    if (ev.type === 'swipedown') {
-        reset(degree, function(){})
+    if (ev.type === 'pandown') {
+        degree -= 3
+        reset(degree)
         lastDirection = 'pandown';
+        if (ev.velocityY > maxV) {
+            maxV = ev.velocityY;
+        };
     }
-    // if (ev.type === 'panend') {
-    //     if (lastDirection === 'panup') {
-    //
-    //     } else {
-    //
-    //     }
-    // }
+    if (ev.type === 'panend') {
+        console.log(maxV)
+        if (maxV < 0) {
+            maxV = maxV * -1;
+        }
+        if (lastDirection === 'panup') {
+            momentum('panup', maxV)
+        } else {
+            momentum('pandown', maxV)
+        }
+        maxV = 0;
+    }
 });
 
-function momentum(direction) {
-
+function momentum(direction, velocity) {
+    if (velocity <= 0) {
+        return velocity;
+    }
+    var newVel = velocity - 0.3;
+    if (direction === 'panup') {
+        degree += (3 * newVel/10)
+    }
+    if (direction === 'pandown') {
+        degree -= (3 * newVel/10)
+    }
+    reset(degree);
+    setTimeout(function() {momentum(direction, newVel)}, 30);
 }
