@@ -1,7 +1,7 @@
 var paneSize = 150;
 var zDepth = paneSize / (2 * Math.tan(Math.PI/8));
 
-var add = function() {
+function add() {
     degree = degree + 1;
 }
 
@@ -22,6 +22,7 @@ function reset(deg, cb) {
 };
 
 var degree = 0;
+var lastDirection = '';
 
 reset(degree, function(){})
 
@@ -29,20 +30,38 @@ var body = document.querySelector('body');
 
 // create a simple instance
 // by default, it only adds horizontal recognizers
-var mc = new Hammer(body);
+// var mc = new Hammer(body);
+var hammertime = new Hammer(body, options);
 
 // let the pan gesture support all directions.
 // this will block the vertical scrolling on a touch-device while on the element
-mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 
 // listen to events...
-mc.on("panleft panright panup pandown tap press", function(ev) {
-    if (ev.type === 'panup') {
-        degree += 5
+var options = {
+    preventDefault: true
+};
+hammertime.on("swipeup swipedown", function(ev){
+    console.log('swipe');
+    if (ev.type === 'swipeup') {
+        console.log(ev.velocityY);
+        degree = degree + ev.velocityY * 100;
         reset(degree, function(){})
+        lastDirection = 'panup';
     }
-    if (ev.type === 'pandown') {
-        degree -= 5
+    if (ev.type === 'swipedown') {
         reset(degree, function(){})
+        lastDirection = 'pandown';
     }
+    // if (ev.type === 'panend') {
+    //     if (lastDirection === 'panup') {
+    //
+    //     } else {
+    //
+    //     }
+    // }
 });
+
+function momentum(direction) {
+
+}
