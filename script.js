@@ -1,4 +1,4 @@
-var paneSize = 150;
+var paneSize = 200;
 var zDepth = paneSize / (2 * Math.tan(Math.PI/8));
 
 function add() {
@@ -9,10 +9,17 @@ function reset(deg) {
     $(".slot-machine").each(function(){
         var $panes = $("li", this);
         $panes.each(function(index){
+            if (degree < 0) degree = 360 + degree;
             var depth = zDepth;
             var xAngle = ((45 * index) + deg) % 360;
             if (xAngle < 80 || xAngle > 280) {
-                $(this).attr("style", "-webkit-transform: rotateX("+ xAngle +"deg) translateZ("+ depth +"px);");
+                $(this).css("display", "block")
+                $(this).css({
+                    // 'webkit-transform':'translate(50%, 0%)',
+                    'webkit-transform': "rotateX("+ xAngle +"deg) translateZ("+ depth +"px)"
+                });
+                // $(this).attr("style", "-webkit-transform: rotateX("+ xAngle +"deg) translateZ("+ depth +"px);");
+                // $(this).attr("style", "-webkit-transform-origin: 50% 50% 50%;");
             } else {
                 $(this).css("display", "none")
             }
