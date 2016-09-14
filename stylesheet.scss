@@ -2,6 +2,7 @@ html, body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-color: #FAEBD7;
 }
 
 #container {
@@ -16,16 +17,16 @@ html, body {
 $paneHeight: 220px;
 $paneWidth: 80px;
 
-#four {
-    background-color: grey;
+#pane4 {
+    background-color: #00688B;
 }
 
 ul {
   height: $paneHeight;
   width: $paneWidth;
-  font-family: sans-serif;
+  font-family: 'BigBottomCartoonRegular';
   font-weight: bold;
-  font-size: 70px;
+  font-size: 50px;
   list-style: none;
   margin: auto;
   padding: 0;
@@ -39,5 +40,15 @@ li {
   position: absolute;
   text-align: center;
   width: 100%;
-  background: rgba(212,62,62,1);
+  background: #63D1F4;
+}
+
+#text {
+    height: 90vh;
+    width: 60vw;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
 }

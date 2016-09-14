@@ -1,7 +1,8 @@
 html, body {
   height: 100vh;
   width: 100vw;
-  margin: 0; }
+  margin: 0;
+  background-color: #FAEBD7; }
 
 #container {
   width: 50vw;
@@ -11,15 +12,15 @@ html, body {
   -webkit-perspective: 800;
   -webkit-transform: translate(-50px, -10px); }
 
-#four {
-  background-color: grey; }
+#pane4 {
+  background-color: #00688B; }
 
 ul {
   height: 220px;
   width: 80px;
-  font-family: sans-serif;
+  font-family: 'BigBottomCartoonRegular';
   font-weight: bold;
-  font-size: 70px;
+  font-size: 50px;
   list-style: none;
   margin: auto;
   padding: 0;
@@ -35,6 +36,15 @@ li {
   position: absolute;
   text-align: center;
   width: 100%;
-  background: #d43e3e; }
+  background: #63D1F4; }
+
+#text {
+  height: 90vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 5vh;
+  right: 5vw; }
 
 /*# sourceMappingURL=stylesheet.css.map */
