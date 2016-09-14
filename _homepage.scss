@@ -39,7 +39,7 @@
 
 .name {
     width: 50vw;
-    height: 70px;
+    height: 100px;
     z-index: 999;
     position: absolute;
     color: #4d4d4d;
@@ -50,6 +50,7 @@
 }
 
 input {
+    height: 100px;
     background-color: transparent;
     border: 0px solid;
 }
