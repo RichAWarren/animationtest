@@ -31,14 +31,6 @@ ul {
   padding: 0;
   position: absolute;
   left: 0; top: 0; bottom: 0; right: 0;
-
-
-  // top: 0; bottom: 0; right: 0; left: 0;
-  // -webkit-transform-style: preserve-3d;
-  // -webkit-animation-iteration-count: infinite;
-  // -webkit-animation-timing-function: linear;
-  // -webkit-animation-name: x-spin;
-  // -webkit-animation-duration: 8s;
 }
 
 li {
@@ -47,12 +39,5 @@ li {
   position: absolute;
   text-align: center;
   width: 100%;
-  // -webkit-backface-visibility: hidden;
   background: rgba(212,62,62,1);
 }
-//
-// @-webkit-keyframes x-spin {
-//   0%    { -webkit-transform: rotateX(0deg); }
-//   50%   { -webkit-transform: rotateX(180deg); }
-//   100%  { -webkit-transform: rotateX(360deg); }
-// }

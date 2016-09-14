@@ -1,40 +1,28 @@
 var paneSize = 220;
 var zDepth = paneSize / (2 * Math.tan(Math.PI/8));
-
-function add() {
-    degree = degree + 1;
-}
-
-function reset(deg) {
-    $(".slot-machine").each(function(){
-        var $panes = $("li", this);
-        $panes.each(function(index){
-            if (degree < 0) degree = 360 + degree;
-            var depth = zDepth;
-            var xAngle = ((45 * index) + deg) % 360;
-            if (xAngle < 70 || xAngle > 280) {
-                $(this).css("display", "block")
-                $(this).css({
-                    // 'webkit-transform':'translate(50%, 0%)',
-                    'webkit-transform': "rotateX("+ xAngle +"deg) translateZ("+ depth +"px)"
-                });
-                // $(this).attr("style", "-webkit-transform: rotateX("+ xAngle +"deg) translateZ("+ depth +"px);");
-                // $(this).attr("style", "-webkit-transform-origin: 50% 50% 50%;");
-            } else {
-                $(this).css("display", "none")
-            }
-        });
-    });
-};
-
 var degree = 0;
 var lastDirection = '';
 var maxV = 0;
 
 reset(degree)
 
-var body = document.querySelector('body');
+function reset(deg) {
+    var panes = [].slice.call(document.getElementsByTagName('LI'))
+    panes.forEach(function(el, index) {
+        if (degree < 0) degree = 360 + degree;
+        var depth = zDepth;
+        var xAngle = ((45 * index) + deg) % 360;
+        if (xAngle < 70 || xAngle > 280) {
+            panes[index].style.display = "block";
+            panes[index].style.webkitTransform = "rotateX("+ xAngle +"deg) translateZ("+ depth +"px)";
+        } else {
+            panes[index].style.display = "none";
+        }
+    })
+}
 
+
+var body = document.querySelector('body');
 // create a simple instance
 // by default, it only adds horizontal recognizers
 var mc = new Hammer(body);
@@ -91,8 +79,6 @@ function momentum(direction, velocity) {
     reset(degree);
     setTimeout(function() {momentum(direction, newVel)}, 30);
 }
-
-var snapping = false;
 
 function snapMove(direction) {
     if (direction === 'pandown') {
