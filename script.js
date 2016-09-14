@@ -81,7 +81,7 @@ function momentum(direction, velocity) {
         var tout = setTimeout(function(){snap()}, 300)
         return velocity;
     }
-    var newVel = velocity - 0.3;
+    var newVel = velocity - 0.15;
     if (direction === 'panup') {
         degree += (4 * newVel)
     }
