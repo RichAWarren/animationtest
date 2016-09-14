@@ -25,6 +25,7 @@ ul {
   height: $paneHeight;
   width: $paneWidth;
   font-family: 'BigBottomCartoonRegular';
+  color:  #344152;
   font-weight: bold;
   font-size: 50px;
   list-style: none;
@@ -35,7 +36,7 @@ ul {
 }
 
 li {
-    border: 2px solid black;
+    border: 2px solid  #00688B;
   line-height: $paneHeight;
   position: absolute;
   text-align: center;

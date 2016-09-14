@@ -19,6 +19,7 @@ ul {
   height: 220px;
   width: 80px;
   font-family: 'BigBottomCartoonRegular';
+  color: #344152;
   font-weight: bold;
   font-size: 50px;
   list-style: none;
@@ -31,7 +32,7 @@ ul {
   right: 0; }
 
 li {
-  border: 2px solid black;
+  border: 2px solid  #00688B;
   line-height: 220px;
   position: absolute;
   text-align: center;
