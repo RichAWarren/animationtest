@@ -12,7 +12,7 @@ function reset(deg) {
             if (degree < 0) degree = 360 + degree;
             var depth = zDepth;
             var xAngle = ((45 * index) + deg) % 360;
-            if (xAngle < 80 || xAngle > 280) {
+            if (xAngle < 70 || xAngle > 280) {
                 $(this).css("display", "block")
                 $(this).css({
                     // 'webkit-transform':'translate(50%, 0%)',
