@@ -1,4 +1,4 @@
-var paneSize = 230;
+var paneSize = 220;
 var zDepth = paneSize / (2 * Math.tan(Math.PI/8));
 
 function add() {
