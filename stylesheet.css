@@ -19,7 +19,7 @@ ul {
   height: 220px;
   width: 80px;
   font-family: 'BigBottomCartoonRegular';
-  color: #000033;
+  color: #1e252f;
   font-weight: bold;
   font-size: 50px;
   list-style: none;
@@ -39,14 +39,31 @@ li {
   width: 100%;
   background: #63D1F4; }
 
-#text {
+.plain-text {
   height: 90vh;
   width: 60vw;
   background-color: white;
   border-radius: 20px;
   position: absolute;
   top: 5vh;
-  right: 5vw; }
+  right: 5vw;
+  font-family: 'SimplePrintRegular';
+  font-size: 25px;
+  color: #292f33; }
+
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(41, 47, 51, 0.5); }
+
+#title {
+  font-family: 'SimplePrintBold';
+  padding: 5% 5% 0 5%;
+  font-size: 40px;
+  margin: 0; }
+
+#text-body {
+  padding: 5% 5% 5% 5%;
+  margin: 0; }
 
 #arrow-right {
   width: 0;

@@ -21,6 +21,7 @@ function reset(deg) {
     })
 }
 
+var text = document.getElementById('text')
 
 var body = document.querySelector('body');
 // create a simple instance
@@ -34,6 +35,7 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 // listen to events...
 mc.on("panup pandown panend tap press", function(ev) {
     if (ev.type === 'panup') {
+        addClass(text, 'blurry-text')
         degree += 3
         reset(degree)
         lastDirection = 'panup';
@@ -42,6 +44,7 @@ mc.on("panup pandown panend tap press", function(ev) {
         };
     }
     if (ev.type === 'pandown') {
+        addClass(text, 'blurry-text')
         degree -= 3
         reset(degree)
         lastDirection = 'pandown';
@@ -91,6 +94,39 @@ function snapMove(direction) {
     if (degree % 45 > 3) {
         setTimeout(function() {snapMove(direction)}, 30);
     } else {
+        removeClass(text, 'blurry-text')
         return degree;
     }
 }
+
+
+
+//add class
+function hasClass(el, className) {
+    if (el.classList)
+        return el.classList.contains(className)
+    else
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+}
+
+function addClass(el, className) {
+    if (el.classList)
+        el.classList.add(className)
+    else if (!hasClass(el, className)) el.className += " " + className
+}
+
+function removeClass(el, className) {
+    if (el.classList)
+        el.classList.remove(className)
+    else if (hasClass(el, className)) {
+        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+        el.className=el.className.replace(reg, ' ')
+    }
+}
+
+
+// text injection
+text.innerHTML = `
+    <p id='title'>Level Four !</p>
+    <p id='text-body'>Red leicester hard cheese emmental. Cheese strings brie cream cheese st. agur blue cheese cottage cheese queso boursin bavarian bergkase. Cheese triangles smelly cheese fromage frais cheese on toast stinking bishop macaroni cheese babybel pecorino. Macaroni cheese emmental boursin cream cheese.</p>
+    `;
