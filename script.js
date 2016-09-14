@@ -78,7 +78,7 @@ mc.on("panup pandown panend tap press", function(ev) {
 function momentum(direction, velocity) {
     if (velocity <= 0) {
         clearTimeout(tout)
-        var tout = setTimeout(function(){snap()}, 300)
+        var tout = setTimeout(function(){snapMove(direction)}, 200)
         return velocity;
     }
     var newVel = velocity - 0.15;
@@ -94,21 +94,11 @@ function momentum(direction, velocity) {
 
 var snapping = false;
 
-function snap() {
-    var diff = degree % 45
-    if (diff < 22.5) {
-        snapMove('down')
-    } else {
-        snapMove('up')
-    }
-    snapping = false;
-}
-
 function snapMove(direction) {
-    if (direction === 'down') {
+    if (direction === 'pandown') {
         degree -= 3
     }
-    if (direction === 'up') {
+    if (direction === 'panup') {
         degree += 3
     }
     reset(degree)
