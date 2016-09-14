@@ -83,10 +83,10 @@ function momentum(direction, velocity) {
     }
     var newVel = velocity - 0.15;
     if (direction === 'panup') {
-        degree += (4 * newVel)
+        degree += (6 * newVel)
     }
     if (direction === 'pandown') {
-        degree -= (4 * newVel)
+        degree -= (6 * newVel)
     }
     reset(degree);
     setTimeout(function() {momentum(direction, newVel)}, 30);
