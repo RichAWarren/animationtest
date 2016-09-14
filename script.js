@@ -33,7 +33,8 @@ var mc = new Hammer(body);
 mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
 // listen to events...
-mc.on("panup pandown panend tap press", function(ev) {
+function addPan()
+{ mc.on("panup pandown panend tap press", function(ev) {
     if (ev.type === 'panup') {
         addClass(text, 'blurry-text')
         degree += 3
@@ -65,6 +66,9 @@ mc.on("panup pandown panend tap press", function(ev) {
         maxV = 0;
     }
 });
+}
+
+addPan()
 
 function momentum(direction, velocity) {
     if (velocity <= 3) {
@@ -99,7 +103,18 @@ function snapMove(direction) {
     }
 }
 
+//box expand
 
+text.addEventListener('click', function() {
+    console.log('click')
+    if (text.className.includes('enlarge-text')) {
+        removeClass(text, 'enlarge-text')
+        addPan()
+    } else {
+        addClass(text, 'enlarge-text')
+        mc.off('panup pandown panend tap press')
+    }
+}, false)
 
 //add class
 function hasClass(el, className) {

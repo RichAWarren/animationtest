@@ -55,6 +55,10 @@ li {
   color: transparent;
   text-shadow: 0 0 5px rgba(41, 47, 51, 0.5); }
 
+.enlarge-text {
+  width: 90vw;
+  z-index: 200; }
+
 #title {
   font-family: 'SimplePrintBold';
   padding: 5% 5% 0 5%;
