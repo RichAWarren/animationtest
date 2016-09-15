@@ -1,0 +1,86 @@
+#ballCanvas {
+  width: 100vw;
+  height: 50vh;
+  top: 45vh;
+  left: 0;
+  position: absolute;
+}
+
+#questionBox {
+    height: 45vh;
+    width: 90vw;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    font-family: 'SimplePrintRegular';
+    font-size: 25px;
+    color: #292f33;
+    z-index: 200;
+    -webkit-transition: width 0.75s;
+    overflow: hidden;
+}
+
+
+#questionText {
+    padding: 5% 5% 5% 5%;
+    margin: 0;
+}
+
+#rightArrow {
+  width: 20vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0vh;
+  right: 2vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#leftArrow {
+  width: 20vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0vh;
+  left: 2vw;
+}
+
+#plus {
+  font-family: 'BigBottomCartoonRegular';
+  display: inline;
+  font-size: 100px;
+  position: absolute;
+  right: 3vw;
+  top: 35vh;
+  color: #63D1F4;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  z-index: 500;
+}
+
+#minus {
+  font-family: 'BigBottomCartoonRegular';
+  display: inline;
+  font-size: 100px;
+  position: absolute;
+  left: 3vw;
+  top: 37vh;
+  color: #63D1F4;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  z-index: 500;
+}
+
+#okay {
+  width: 32vw;
+  height: 20vh;
+  position: absolute;
+  bottom: -2vh;
+  left: 35vw;
+  display: none;
+}
