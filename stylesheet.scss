@@ -1,41 +1,99 @@
+@import 'homepage';
+
 html, body {
   height: 100vh;
   width: 100vw;
-  -webkit-perspective: 800;
+  margin: 0;
+  background-color: #FAEBD7;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
 }
 
-$paneSize: 150px;
+#container {
+    width: 50vw;
+    height: 100vh;
+    left: 0px;
+    top: 0;
+    -webkit-perspective: 800;
+    -webkit-transform: translate(-50px, -10px);
+}
+
+$paneHeight: 220px;
+$paneWidth: 80px;
+
+#pane4 {
+    background-color: #00688B;
+}
 
 ul {
-  height: $paneSize;
-  width: $paneSize;
-  font-family: sans-serif;
+  height: $paneHeight;
+  width: $paneWidth;
+  font-family: 'BigBottomCartoonRegular';
+  color:  #1e252f;
   font-weight: bold;
-  font-size: 70px;
+  font-size: 50px;
   list-style: none;
   margin: auto;
   padding: 0;
   position: absolute;
-  top: 0; bottom: 0; right: 0; left: 0;
-  // -webkit-transform-style: preserve-3d;
-  // -webkit-animation-iteration-count: infinite;
-  // -webkit-animation-timing-function: linear;
-  // -webkit-animation-name: x-spin;
-  // -webkit-animation-duration: 8s;
+  left: 0; top: 0; bottom: 0; right: 0;
 }
 
 li {
-
-  line-height: $paneSize;
+    border: 2px solid  #00688B;
+  line-height: $paneHeight;
   position: absolute;
   text-align: center;
   width: 100%;
-  //-webkit-backface-visibility: hidden;
-  background: rgba(212,62,62,1);
+  background: #63D1F4;
 }
-//
-// @-webkit-keyframes x-spin {
-//   0%    { -webkit-transform: rotateX(0deg); }
-//   50%   { -webkit-transform: rotateX(180deg); }
-//   100%  { -webkit-transform: rotateX(360deg); }
-// }
+
+.plain-text {
+    height: 90vh;
+    width: 60vw;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    font-family: 'SimplePrintRegular';
+    font-size: 25px;
+    color: #292f33;
+    z-index: 200;
+    -webkit-transition: width 0.75s;
+}
+
+.blurry-text {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(41,47,51,0.5);
+}
+
+.enlarge-text {
+    width: 90vw;
+    z-index: 200;
+    -webkit-transition: width 0.75s;
+}
+
+#title {
+    font-family: 'SimplePrintBold';
+    padding: 5% 5% 0 5%;
+    font-size: 40px;
+    margin: 0;
+}
+
+#text-body {
+    padding: 5% 5% 5% 5%;
+    margin: 0;
+}
+
+#arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 5vh solid transparent;
+  border-bottom: 5vh solid transparent;
+  border-left: 5vh solid #00688B;
+  position: absolute;
+  top: 42vh;
+  left: 25vw;
+}

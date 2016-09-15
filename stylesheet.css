@@ -1,28 +1,140 @@
+#logo {
+  font-family: 'BigBottomCartoonRegular';
+  display: inline;
+  font-size: 50px;
+  position: absolute;
+  left: 5vw;
+  top: 150px;
+  color: #63D1F4;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black; }
+
+#main-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+#app {
+  font-family: 'BigBottomCartoonRegular';
+  display: inline;
+  font-size: 70px;
+  position: absolute;
+  right: 5vw;
+  top: 190px;
+  color: #00688B;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black; }
+
+#myCanvas {
+  position: absolute;
+  bottom: 0px;
+  margin: 0; }
+
+.name {
+  width: 50vw;
+  height: 100px;
+  z-index: 999;
+  position: absolute;
+  color: #4d4d4d;
+  top: 450px;
+  left: 10vw;
+  font-family: 'BigBottomCartoonRegular';
+  font-size: 30px;
+  line-height: 100px; }
+
+input {
+  height: 100px;
+  background-color: transparent;
+  border: 0px solid; }
+
 html, body {
   height: 100vh;
   width: 100vw;
-  -webkit-perspective: 800; }
+  margin: 0;
+  background-color: #FAEBD7;
+  left: 0;
+  position: absolute;
+  overflow: hidden; }
+
+#container {
+  width: 50vw;
+  height: 100vh;
+  left: 0px;
+  top: 0;
+  -webkit-perspective: 800;
+  -webkit-transform: translate(-50px, -10px); }
+
+#pane4 {
+  background-color: #00688B; }
 
 ul {
-  height: 150px;
-  width: 150px;
-  font-family: sans-serif;
+  height: 220px;
+  width: 80px;
+  font-family: 'BigBottomCartoonRegular';
+  color: #1e252f;
   font-weight: bold;
-  font-size: 70px;
+  font-size: 50px;
   list-style: none;
   margin: auto;
   padding: 0;
   position: absolute;
+  left: 0;
   top: 0;
   bottom: 0;
-  right: 0;
-  left: 0; }
+  right: 0; }
 
 li {
-  line-height: 150px;
+  border: 2px solid  #00688B;
+  line-height: 220px;
   position: absolute;
   text-align: center;
   width: 100%;
-  background: #d43e3e; }
+  background: #63D1F4; }
+
+.plain-text {
+  height: 90vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  font-family: 'SimplePrintRegular';
+  font-size: 25px;
+  color: #292f33;
+  z-index: 200;
+  -webkit-transition: width 0.75s; }
+
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(41, 47, 51, 0.5); }
+
+.enlarge-text {
+  width: 90vw;
+  z-index: 200;
+  -webkit-transition: width 0.75s; }
+
+#title {
+  font-family: 'SimplePrintBold';
+  padding: 5% 5% 0 5%;
+  font-size: 40px;
+  margin: 0; }
+
+#text-body {
+  padding: 5% 5% 5% 5%;
+  margin: 0; }
+
+#arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 5vh solid transparent;
+  border-bottom: 5vh solid transparent;
+  border-left: 5vh solid #00688B;
+  position: absolute;
+  top: 42vh;
+  left: 25vw; }
 
 /*# sourceMappingURL=stylesheet.css.map */

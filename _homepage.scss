@@ -1,0 +1,57 @@
+#logo {
+    font-family: 'BigBottomCartoonRegular';
+    display: inline;
+    font-size: 50px;
+    position: absolute;
+    left: 5vw;
+    top: 150px;
+    color: #63D1F4;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+#main-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#app {
+    font-family: 'BigBottomCartoonRegular';
+    display: inline;
+    font-size: 70px;
+    position: absolute;
+    right: 5vw;
+    top: 190px;
+    color: #00688B;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+#myCanvas {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+}
+
+.name {
+    width: 50vw;
+    height: 100px;
+    z-index: 999;
+    position: absolute;
+    color: #4d4d4d;
+    top: 450px;
+    left: 10vw;
+    font-family: 'BigBottomCartoonRegular';
+    font-size: 30px;
+    line-height: 100px;
+}
+
+input {
+    height: 100px;
+    background-color: transparent;
+    border: 0px solid;
+}
