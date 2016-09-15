@@ -60,6 +60,8 @@ li {
     font-family: 'SimplePrintRegular';
     font-size: 25px;
     color: #292f33;
+    z-index: 200;
+    -webkit-transition: width 0.75s;
 }
 
 .blurry-text {
@@ -70,6 +72,7 @@ li {
 .enlarge-text {
     width: 90vw;
     z-index: 200;
+    -webkit-transition: width 0.75s;
 }
 
 #title {
