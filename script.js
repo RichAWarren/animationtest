@@ -32,7 +32,7 @@ var mc = new Hammer(body);
 // this will block the vertical scrolling on a touch-device while on the element
 mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-// listen to events...
+// listen to events..
 function addPan()
 { mc.on("panup pandown panend tap press", function(ev) {
     if (ev.type === 'panup') {
