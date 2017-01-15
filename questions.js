@@ -31,7 +31,7 @@ var questions = [{
 }, {
     activity: '6 leicester hard cheese emmental. Cheese strings brie cream cheese st. agur blue cheese cottage cheese queso boursin bavarian bergkase. Cheese triangles smelly cheese fromage frais cheese on toast stinking bishop macaroni cheese babybel pecorino.',
     score: 1,
-    colour: '#fff176',
+    colour: '#fff176',ghhh
     tag: 'red leicester'
 }, {
     activity: '7 leicester hard cheese emmental. Cheese strings brie cream cheese st. agur blue cheese cottage cheese queso boursin bavarian bergkase. Cheese triangles smelly cheese fromage frais cheese on toast stinking bishop macaroni cheese babybel pecorino.',
